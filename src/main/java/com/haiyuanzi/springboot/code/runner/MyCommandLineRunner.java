@@ -1,4 +1,4 @@
-package com.haiyuanzi.springboot.runner;
+package com.haiyuanzi.springboot.code.runner;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

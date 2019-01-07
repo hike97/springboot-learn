@@ -1,4 +1,4 @@
-package com.haiyuanzi.springboot.listener;
+package com.haiyuanzi.springboot.code.listener;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringApplicationRunListener;
