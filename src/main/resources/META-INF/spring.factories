@@ -1,11 +1,11 @@
 # Initializers
 org.springframework.context.ApplicationContextInitializer=\
-com.haiyuanzi.springboot.listener.MyApplicationContextInitializer
+com.haiyuanzi.springboot.code.listener.MyApplicationContextInitializer
 
 
 # Application Listeners
 org.springframework.boot.SpringApplicationRunListener=\
-com.haiyuanzi.springboot.listener.MySpringAppicationRunListener
+com.haiyuanzi.springboot.code.listener.MySpringAppicationRunListener
 
 
 

@@ -1,0 +1,11 @@
+server:
+  port: 8092
+spring:
+  hello:
+    prefix: "\u5C0F\u635F\u6837"
+    suffix: "\u83DC"
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/spring_cache

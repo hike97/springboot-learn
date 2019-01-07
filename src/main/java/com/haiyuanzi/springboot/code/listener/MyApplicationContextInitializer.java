@@ -1,4 +1,4 @@
-package com.haiyuanzi.springboot.listener;
+package com.haiyuanzi.springboot.code.listener;
 
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;

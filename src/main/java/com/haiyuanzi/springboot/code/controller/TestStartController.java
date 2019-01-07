@@ -1,4 +1,4 @@
-package com.haiyuanzi.springboot.controller;
+package com.haiyuanzi.springboot.code.controller;
 
 import com.atguigu.starter.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
