@@ -20,18 +20,18 @@ public class SpringbootLearnApplication {
 		SpringApplication.run(SpringbootLearnApplication.class, args);
 	}
 
-	@Bean
-	public ViewResolver myViewResolver(){
-		return new MyViewResolver ();
-	}
-
-public static class MyViewResolver implements ViewResolver{
-
-	@Nullable
-	@Override
-	public View resolveViewName (String viewName, Locale locale) throws Exception {
-		return null;
-	}
-}
+//	@Bean
+//	public ViewResolver myViewResolver(){
+//		return new MyViewResolver ();
+//	}
+//
+//	public static class MyViewResolver implements ViewResolver{
+//
+//	@Nullable
+//	@Override
+//	public View resolveViewName (String viewName, Locale locale) throws Exception {
+//		return null;
+//		}
+//	}
 }
 

@@ -4,7 +4,7 @@ import com.haiyuanzi.springboot.cache.bean.Employee;
 import com.haiyuanzi.springboot.cache.mapper.EmployeeMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.*;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
  **/
 @Service
 @Slf4j
+@CacheConfig(cacheNames = "emp")
 public class CacheService {
 
 	@Autowired
@@ -36,9 +37,39 @@ public class CacheService {
 	 * @param id
 	 * @return
 	 */
-	@Cacheable(cacheNames = {"emp"})
+//	@Cacheable(cacheNames = {"emp"},key = "#root.methodName+'['+#id+']'")
+	@Cacheable(/*cacheNames = {"emp"}*//*,keyGenerator = "myKeyGenerator",condition = "#a0>1",unless = "#a0==2",sync =true*/)
 	public Employee getEmp (Integer id) {
 		log.info ("查询员工的id为:"+id);
 		return mapper.getEmpById (id);
+	}
+
+//	@CachePut(cacheNames = "emp",key = "#result.id")
+	@CachePut(/*cacheNames = "emp",*/key = "#employee.id")
+	public Employee update(Employee employee){
+		log.info ("对员工执行更新操作:"+employee);
+		mapper.updateEmp (employee);
+		return employee;
+	}
+
+	@CacheEvict(/*cacheNames = "emp",*/key="#id")
+	public void deleteEmp(Integer id){
+		log.info ("delete:"+id);
+//		mapper.deleteEmpById (id);
+	}
+
+	@Caching(
+		cacheable ={
+			@Cacheable(value = "emp",key = "#lastName")
+		},
+		put = {
+			@CachePut(value = "emp",key = "#result.id"),
+			@CachePut(value = "emp",key = "#result.email")
+		}
+
+	)
+	public Employee getEmpByName (String lastName) {
+		log.info ("查询员工的lastName为:"+lastName);
+		return mapper.getEmpByLastName (lastName);
 	}
 }
