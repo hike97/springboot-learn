@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/cache",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 @Slf4j
-public class CacheController {
+public class CacheEmpController {
 
 	@Autowired
 	CacheService cacheService;

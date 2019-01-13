@@ -1,6 +1,8 @@
 package com.haiyuanzi.springboot.cache.mapper;
 
+import com.haiyuanzi.springboot.cache.bean.Department;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * @author hike97 許せ　サスケ　これで最後だ
@@ -9,4 +11,6 @@ import org.apache.ibatis.annotations.Mapper;
  **/
 @Mapper
 public interface DepartmentMapper {
+	@Select ("select * from department where id = #{id}")
+	Department getDeptById (Integer id);
 }
